@@ -1,0 +1,42 @@
+/*Classe da lista para remover as "bolinhas"*/
+.payList {
+    list-style-type: none;
+}
+
+/*Classe dos backgrounds tom normal e tom mais escuro*/
+.bg-blue {
+    background-color: #171718;
+}
+
+.bg-darkBlue {
+    background-color: #171718;
+    ;
+}
+
+/*Classe dos links, link /link visitado/quando o mouse passa*/
+.info:link {
+    color: white;
+}
+
+/*OBS: Se remover essa parte não funciona, se ela estiver com outra cor quando um link é visitado todos se tornam da cor e não somente o visitado*/
+.info:visited {
+    color: white;
+}
+
+.info:hover {
+    color: wheat;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin-bottom: 12px;
+}
+
+.payList {
+    color: white;
+}

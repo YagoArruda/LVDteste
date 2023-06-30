@@ -1,0 +1,51 @@
+/*teste*/
+
+.bg-blue{
+background-color: rgb(69, 69, 238);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+}
+  
+.payments {
+    display: flex;
+    margin-left: 350px;
+    flex-direction: column;
+}
+  
+.payments img {
+    height: 20px;
+    margin-right: 10px;
+}
+  
+.contact {
+    display: flex;
+    margin-left: 350px;
+    flex-direction: column;
+}
+  
+.contact a {
+    display: inline-block;
+    margin-right: 10px;
+    color: inherit;
+}
+  
+.empty {
+    flex-grow: 1;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+}
+
+.links {
+    color: white;
+}

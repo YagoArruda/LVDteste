@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem somos?</title>
+
+  <!--Style CSS-->
+  <link href="Estilos/template.css" rel="stylesheet" type="text/css" />
+  <!--Bootstrap (CSS)-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!--FontAwesome-->
+  <script src="https://kit.fontawesome.com/ee6502c5bc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--Cabecalho-->
+  <header class="m-0 d-block bg-blue">
+    <nav class="navbar">
+      <div class="container-fluid">
+
+        <!--Logo-->
+        <a href="index.html"><img src="img/lavaDriveLogo.png" class="rounded" style="width: 75%;"></a>
+
+        <!--Opções-->
+        <div class="btn-group d-flex" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-outline-light"
+            onclick="window.location.href = 'index.html'">Início</button>
+            <button id="agend/adm" type="button" class="btn btn-outline-light" onclick="irAgendOuAdm()">Agendar</button>
+          <button id="perfil/login" type="button" class="btn btn-outline-light"
+            onclick="irParaTela()">Login</button>
+        </div>
+
+      </div>
+    </nav>
+
+  </header>
+
+  <!--Conteudos-->
+  <main class="m-0 d-block">
+    <div class="container-fluid row my-5 justify-content-center text-center">
+
+      <div class="col-9 shadow rounded">
+        <h2>Quem Somos</h2>
+        <p>
+          Logo após a pandemia, foram vistas várias lojas e mercados se modernizando e se atualizando
+          para o mercado atual da tecnologia, para conseguirem cumprir suas funções com facilidade num
+          meio em que todos dependem da internet, enquanto os lava-jatos ficaram ultrapassados demais,
+          com todas as tecnologias aparecendo nas escolas, faculdades e lojas famosas como Americanas e
+          Araujo, as coisas não podiam continuar assim, então a ideia do projeto LavaDrive nasceu no
+          início de 2023.
+        </p>
+
+        <p>
+          A qual foi procurada para modernizar os lava-jatos, deixar as funções de maneira mais prática,
+          atraíndo assim novos clientes, através da construção de um sistema para facilitar a interação
+          de lava-jato e clientes, a partir da padronização de todos os feitos que demorariam até mêses
+          para serem feitos de maneira manual, e a rapidez adquirida pelo fato de ser um processo online.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="container-fluid row my-5 justify-content-center text-center">
+
+      <div class="col-9 shadow rounded">
+        <h2>Relatos</h2>
+
+        <div class="mx-4 my-2 row justify-content-center">
+          <img class="rounded-circle mb-3" src="img/fotoNataliaVerona.png" style="width: 220px; height: 200px;">
+          <br>
+          <p class="col-8 pt-5">
+            Natalia Verona tem 26 anos é solteira e trabalha como investigadora da policia civil.
+            É inteligente, bem humorada e adora gatos, mas que está sempre ocupada com o trabalho
+            sendo um grande desafio separar um tempo do seu dia para limpar seu carro.
+            Ela encontrou a solução na LavaDrive que com o pagamento adiantado, marcação de
+            horário e serviço eficiente permite que ela aproveite o seu tempo livre sem se
+            preocupar com a limpeza do carro.
+          </p>
+        </div>
+
+        <div class="mx-4 my-2 row justify-content-center">
+          <p class="col-8 pt-4">
+            André Veríssimo tem 32 anos, é casado, tem filhos e trabalha como uber já faz 5 anos.
+            Dessa forma ele precisa sustentá-los e procura uma forma de deixar o carro limpo
+            gastando o mínimo de tempo possível que poderia estar ganhando dinheiro para sua
+            família. Seus filhos são pequenos e a mulher precisa cuidar deles, então André não tem
+            ajuda para levar o carro no lava-jato, ultimamente necessitando de uma maneira rápida
+            para agendar uma lavagem de maneira virtual e bancar tudo que precisa dentro de casa,
+            no qual pudesse colocar um horário pré-definido para levar o carro e buscar
+            rapidamente e em qual dia quisesse.
+          </p>
+          <img class="rounded-circle mb-3" src="img/fotoAndreVerissimo.png" style="width: 220px; height: 200px;">
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!--Rodape-->
+  <footer class="m-0 p-0 d-block text-white container-fluid">
+
+    <div class="m-0 mt-2 container-fluid bg-blue text-center row">
+
+      <!--Metodos de pagamento-->
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+        <ul class="payList">
+          <li>
+            <p>Métodos de pagamento</p>
+          </li>
+          <li><i class="fa-brands fa-cc-visa fs-3"></i></li>
+          <li><i class="fa-brands fa-paypal fs-3"></i></li>
+          <li><i class="fa-brands fa-cc-mastercard fs-3"></i></li>
+          <li><i class="fa-brands fa-pix fs-3"></i></li>
+          <li><i class="fa-brands fa-cc-diners-club fs-3"></i></li>
+        </ul>
+      </div>
+
+      <!--Contatos-->
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+        <ul class="payList">
+          <li>
+            <p>Métodos de contato</p>
+          </li>
+          <li><a href="#" class="info"><i class="fa-solid fa-map-location-dot" style="color: #ffffff;"></i>
+              Rua C N°65
+              Água Branca</a></li>
+          <li><a href="#" class="info"><i class="fa-brands fa-instagram fs-5" style="color: #ffffff;"></i>
+              @LavaDrive</a></li>
+          <li><a href="#" class="info"><i class="fa-solid fa-phone" style="color: #ffffff;"></i> (31)
+              3392-1187</a>
+          </li>
+          <li><a href="#" class="info"><i class="fa-regular fa-envelope fs-5" style="color: #ffffff;"></i>
+              lavadrive@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <!--Outros-->
+      <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+        <ul class="payList">
+          <li>
+            <p>Outros links úteis</p>
+          </li>
+          <li><a href="QuemSomos.html" class="info">Quem somos</a></li>
+          <li><a href="DúvidasAjuda.html" class="info">Ajuda</a></li>
+          <li><a href="DúvidasAjuda.html" class="info">Dúvidas frequentes</a></li>
+          <li><a href="termosdeprivacidade.html" class="info">Termos de privacidade</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!--Copyright-->
+    <div class="m-0 container-fluid bg-darkBlue text-center row">
+      <p>Copyright LavaDrive 2023</p>
+    </div>
+
+  </footer>
+
+  <!--Bootstrap (Java)-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <!--Script que gerencia as contas e cadastros-->
+  <script src="Scripts/Usuarios.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+
+    <!--Style CSS-->
+    <link href="Estilos/template.css" rel="stylesheet" type="text/css" />
+    <!--Bootstrap (CSS)-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/ee6502c5bc.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="initPerfil()">
+    <!--Cabecalho-->
+    <header class="m-0 d-block bg-blue">
+        <nav class="navbar">
+            <div class="container-fluid">
+
+                <!--Logo-->
+                <a href="index.html"><img src="img/lavaDriveLogo.png" class="rounded" style="width: 75%;"></a>
+
+                <!--Opções-->
+                <div class="btn-group d-flex" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-light"
+                        onclick="window.location.href = 'index.html'">Início</button>
+                        <button id="agend/adm" type="button" class="btn btn-outline-light" onclick="irAgendOuAdm()">Agendar</button>
+                    <button id="perfil/login" type="button" class="btn btn-outline-light"
+                        onclick="irParaTela()">Login</button>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <!--Conteudos-->
+    <main class="m-0 d-block p-3">
+
+        <div class="row container-fluid justify-content-center my-4">
+
+            <div class="border rounded me-3 my-3 text-center" style="width: 94%;">
+                <h4 class="mt-2">Dados do Usuário</h4>
+            </div>
+
+            <div class="col-11 col-lg-3 mx-2 mt-2 border rounded justify-content-center text-center">
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" onclick="opcoes(1)"
+                    checked>
+                <label class="btn btn-light border mt-4" for="option1" style="width: 80%;">Meus dados</label>
+
+                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off"
+                    onclick="opcoes(2)">
+                <label class="btn btn-light border mt-4" for="option2" style="width: 80%;">Veículo</label>
+
+                <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off"
+                    onclick="opcoes(3)">
+                <label class="btn btn-light border my-4" for="option3" style="width: 80%;">Histórico</label>
+
+            </div>
+
+            <div id="tela" class="col-11 col-lg-8 mx-4 mt-2 border rounded text-center">
+
+                <div class="mt-2 text-center rounded-circle justify-content-center text-center justify-items-center">
+                    <img id="perfilImage" class="rounded-circle" src="img/circulo cinza.png" alt="perfil"
+                        style="width: 30%;">
+                    <p><i class="fa-solid fa-pencil"></i> Editar foto de perfil</p>
+                    <input type="file" id="inputImagem" accept="image/*" style="max-width: 54%;">
+                </div>
+
+                <div class="d-flex justify-content-center my-3">
+                    <input id="perfilInputNome" class="form-control text-center border-secondary" type="search"
+                        placeholder="Nome" aria-label="Search" style="width: 20rem;">
+                </div>
+
+                <div class="d-flex justify-content-center my-3">
+                    <input id="perfilInputUsuario" class="form-control text-center border-secondary" type="search"
+                        placeholder="Nome de Usuario" aria-label="Search" style="width: 20rem;">
+                </div>
+
+                <div class="d-flex justify-content-center my-3">
+                    <input id="perfilInputEmail" class="form-control text-center border-secondary" type="search"
+                        placeholder="E-mail" aria-label="Search" style="width: 20rem;">
+                </div>
+
+                <div class="d-flex justify-content-center my-3">
+                    <input id="perfilInputTelefone" class="form-control text-center border-secondary" type="search"
+                        placeholder="Telefone" aria-label="Search" style="width: 20rem;">
+                </div>
+
+                <div class="d-flex row justify-content-center my-3">
+                    <button type="button" class="btn btn-light border mt-4 ms-3" id="trocarSenha"
+                        onclick="window.location.href = 'TrocarSenha.html'" style="width: 8rem;">Trocar Senha</button>
+
+                    <button type="button" class="btn btn-light border mt-4 ms-3" id="salvar" style="width: 8rem;"
+                        onclick="salvarAlteracoes()">Salvar</button>
+
+                    <button type="radio" onclick="sair()" class="btn btn-outline-danger border mt-4 ms-3" name="options"
+                        id="logoff" style="width: 8rem;">Sair</button>
+
+                    <!-- Modal de deletar a conta -->
+                    <button type="button" class="btn btn-danger border mt-4 ms-3" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" style="width: 8rem;">
+                        Excluir conta
+                    </button>
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Você deseja excluir sua conta?
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Esteja ciente que esta ação é permanente e irreversível.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="deletar()" class="btn btn-danger">Sim</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Mensagem toast-->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">LavaDrive</strong>
+                    <small>Agora</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <p id="toastMensage">Mensagem</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!--Rodape-->
+    <footer class="m-0 p-0 d-block text-white container-fluid">
+
+        <div class="m-0 mt-2 container-fluid bg-blue text-center row">
+
+            <!--Metodos de pagamento-->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+                <ul class="payList">
+                    <li>
+                        <p>Métodos de pagamento</p>
+                    </li>
+                    <li><i class="fa-brands fa-cc-visa fs-3"></i></li>
+                    <li><i class="fa-brands fa-paypal fs-3"></i></li>
+                    <li><i class="fa-brands fa-cc-mastercard fs-3"></i></li>
+                    <li><i class="fa-brands fa-pix fs-3"></i></li>
+                    <li><i class="fa-brands fa-cc-diners-club fs-3"></i></li>
+                </ul>
+            </div>
+
+            <!--Contatos-->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+                <ul class="payList">
+                    <li>
+                        <p>Métodos de contato</p>
+                    </li>
+                    <li><a href="#" class="info"><i class="fa-solid fa-map-location-dot" style="color: #ffffff;"></i>
+                            Rua C N°65
+                            Água Branca</a></li>
+                    <li><a href="#" class="info"><i class="fa-brands fa-instagram fs-5" style="color: #ffffff;"></i>
+                            @LavaDrive</a></li>
+                    <li><a href="#" class="info"><i class="fa-solid fa-phone" style="color: #ffffff;"></i> (31)
+                            3392-1187</a>
+                    </li>
+                    <li><a href="#" class="info"><i class="fa-regular fa-envelope fs-5" style="color: #ffffff;"></i>
+                            lavadrive@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <!--Outros-->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+                <ul class="payList">
+                    <li>
+                        <p>Outros links úteis</p>
+                    </li>
+                    <li><a href="QuemSomos.html" class="info">Quem somos</a></li>
+                    <li><a href="DúvidasAjuda.html" class="info">Ajuda</a></li>
+                    <li><a href="DúvidasAjuda.html" class="info">Dúvidas frequentes</a></li>
+                    <li><a href="termosdeprivacidade.html" class="info">Termos de privacidade</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!--Copyright-->
+        <div class="m-0 container-fluid bg-darkBlue text-center row">
+            <p>Copyright LavaDrive 2023</p>
+        </div>
+
+    </footer>
+
+    <!--Script que gerencia as contas e cadastros-->
+    <script src="Scripts/Usuarios.js"></script>
+
+    <script src="Scripts/Perfil.js"></script>
+
+    <!--Bootstrap (Java)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!--Script que gerencia as contas e cadastros-->
+    <script src="Scripts/Usuarios.js"></script>
+</body>
+
+</html>
